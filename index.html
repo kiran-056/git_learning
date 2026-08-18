@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+      }
+      P {
+        font-size: 50px;
+        font-weight: bold;
+      }
+
+      button {
+        font-size: 20px;
+        font-weight: bold;
+        background-color: rgb(15, 182, 224);
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        cursor: pointer;
+        width: 200px;
+      }
+      button:hover {
+        background-color: rgb(10, 141, 173);
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <p id="para">0</p>
+    <button id="btn1">Increment</button>
+    <button id="btn2">Decrement</button>
+    <button id="btn3">Increment By 5</button>
+    <button id="btn4">Decrement By 5</button>
+    <button id="btn5">Reset</button>
+    <script>
+      alert("let start the game");
+      let para = document.getElementById("para");
+      let btn1 = document.getElementById("btn1");
+      let btn2 = document.getElementById("btn2");
+      let btn3 = document.getElementById("btn3");
+      let btn4 = document.getElementById("btn4");
+      let btn5 = document.getElementById("btn5");
+      count = 0;
+      btn1.addEventListener("click", function () {
+        count = count + 1;
+        para.innerText = count;
+      });
+      btn2.addEventListener("click", function () {
+        if (count > 0) {
+          count = count - 1;
+        }
+        para.innerText = count;
+      });
+      btn3.addEventListener("click", function () {
+        count = count + 5;
+        para.innerText = count;
+      });
+      btn4.addEventListener("click", function () {
+        if (count > 4) {
+          count = count - 5;
+        }
+        para.innerText = count;
+      });
+      btn5.addEventListener("click", function () {
+        para.innerText = 0;
+      });
+    </script>
+  </body>
+</html>
